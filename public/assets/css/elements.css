@@ -3719,9 +3719,11 @@ span.comments-date {
 }
 
 .theme-default-tab-wrap .tab-content {
+    color: #ffffff;
     padding: 35px 40px;
     margin-top: -1px;
-    border: 1px solid rgba(201, 179, 140, 0.5);
+    background-color: #c9b38c;
+    border: 5px solid #fff;
 }
 
 @media (max-width: 767px) {
@@ -3742,6 +3744,7 @@ span.comments-date {
 
 .theme-default-tab-wrap .tab-content .tab-pane p:last-child {
     margin-bottom: 0;
+    color: #fff;
 }
 
 
