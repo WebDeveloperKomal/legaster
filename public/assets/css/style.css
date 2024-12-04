@@ -4585,9 +4585,9 @@ ol.wp-block-latest-comments {
 
 .cta-section:before {
     content: "";
-    background: #c9b38c;
+    /* background: #c9b38c; */
     background-image: -moz-linear-gradient(-90deg, #262b3e 50%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
-    background-image: -webkit-linear-gradient(-90deg, #262b3e 50%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
+    /* background-image: -webkit-linear-gradient(-90deg, #262b3e 50%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%); */
     background-image: -ms-linear-gradient(-90deg, #262b3e 50%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
     width: 100%;
     height: 100%;
@@ -4776,10 +4776,10 @@ ol.wp-block-latest-comments {
 .contact-section-s2:before,
 .contact-section-s3:before {
     content: "";
-    background: #262b3e;
-    background-image: -moz-linear-gradient(90deg, #262b3e 62%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
+    /* background: #262b3e; */
+    /* background-image: -moz-linear-gradient(90deg, #262b3e 62%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
     background-image: -webkit-linear-gradient(90deg, #262b3e 62%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
-    background-image: -ms-linear-gradient(90deg, #262b3e 62%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%);
+    background-image: -ms-linear-gradient(90deg, #262b3e 62%, #c9b38c 96%, #c9b38c 97%, #c9b38c 100%); */
     width: 100%;
     height: 100%;
     position: absolute;
@@ -9033,14 +9033,16 @@ ul.a {
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
-    /* distance from the bottom */
     left: 20px;
-    /* distance from the left side */
     background-color: #25d366;
     border-radius: 50%;
-    padding: 15px;
+    width: 50px;
+    height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 9999;
     transition: all 0.3s ease;
@@ -9058,5 +9060,11 @@ ul.a {
     .whatsapp-icon {
         bottom: 10px;
         left: 10px;
+        width: 50px;
+        /* Adjust width for smaller screens */
+        height: 50px;
+        /* Adjust height for smaller screens */
+        font-size: 24px;
+        /* Adjust icon size for smaller screens */
     }
 }
