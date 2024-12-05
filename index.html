@@ -699,6 +699,142 @@
 </head>
 
 <body class="home page-template page-template-elementor_header_footer page page-id-14 theme-juristic woocommerce-no-js elementor-default elementor-template-full-width elementor-kit-693 elementor-page elementor-page-14">
+
+    <!-- Disclaimer Popup -->
+    <div id="disclaimer-popup" class="disclaimer-popup">
+        <div class="popup-content">
+            <h2>Disclaimer</h2>
+            <p>Current rules of the Bar Council of India impose restrictions on maintaining a web page and do not permit lawyers to provide information concerning their areas of practice. Legaster is, therefore, constrained from providing any further information
+                on this web page.</p>
+            <p>The rules of the Bar Council of India prohibit law firms from soliciting work or advertising in any manner. By clicking on 'I AGREE', the user acknowledges that:</p>
+            <ul>
+                <li>The user wishes to gain more information about Legaster, its practice areas, and its attorneys, for his/her own information and use.</li>
+                <li>The information is made available/provided to the user only on his/her specific request and any information obtained or material downloaded from this website is completely at the user's volition.</li>
+                <li>Any transmission, receipt, or use of this site is not intended to, and will not, create any lawyer-client relationship.</li>
+                <li>None of the information contained on the website is in the nature of a legal opinion or otherwise amounts to any legal advice.</li>
+                <li>Legaster is not liable for any consequence of any action taken by the user relying on material/information provided under this website. In cases where the user has any legal issues, he/she must seek independent legal advice.</li>
+            </ul>
+            <div class="buttons">
+                <button id="agree-btn">I AGREE</button>
+                <button id="disagree-btn">I DISAGREE</button>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* #b58c5a; */
+        /* Styling for the disclaimer popup */
+        
+        .disclaimer-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            /* Initially hidden */
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            text-align: left;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            overflow-y: auto;
+            /* If the content overflows, make it scrollable */
+            max-height: 80%;
+        }
+        /* Title of the disclaimer */
+        
+        .popup-content h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        /* Paragraph and list styles */
+        
+        .popup-content p,
+        .popup-content ul {
+            margin-bottom: 15px;
+        }
+        /* Make sure buttons stay at the bottom of the screen */
+        
+        .popup-content .buttons {
+            text-align: center;
+            position: sticky;
+            bottom: -18px;
+            background-color: white;
+            /* Ensure the background is visible */
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .popup-content button {
+            background-color: #b58c5a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            flex-grow: 1;
+            max-width: 45%;
+        }
+        
+        .popup-content button:hover {
+            background-color: #b58c5a;
+        }
+        /* Main content styles */
+        
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 600px) {
+            .popup-content {
+                width: 90%;
+                max-width: 100%;
+            }
+            .popup-content button {
+                font-size: 14px;
+                /* Smaller buttons on mobile */
+                padding: 8px 16px;
+            }
+        }
+    </style>
+    <script>
+        // Check if the user has accepted the disclaimer before
+        if (!localStorage.getItem('disclaimerAccepted')) {
+            // Show the disclaimer popup if not accepted
+            document.getElementById('disclaimer-popup').style.visibility = 'visible';
+        }
+
+        // Get the "I AGREE" and "I DISAGREE" buttons and add event listeners to them
+        document.getElementById('agree-btn').addEventListener('click', function() {
+            // Store in localStorage that the user has accepted the disclaimer
+            localStorage.setItem('disclaimerAccepted', 'true');
+
+            // Hide the popup
+            document.getElementById('disclaimer-popup').style.visibility = 'hidden';
+        });
+
+        document.getElementById('disagree-btn').addEventListener('click', function() {
+            // Redirect to Google and close the window after the user disagrees
+            window.location.href = 'https://www.google.co.in/';
+            window.close(); // Try to close the window
+        });
+    </script>
+
     <div class="page-wrapper layout-full">
         <!-- #juristic-theme-wrapper -->
         <!-- start preloader -->
